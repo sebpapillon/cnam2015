@@ -7,7 +7,7 @@ public class IhmTextCompte {
 	private static Compte Compte2;
 	
 	public static void main (String args [ ]) {
-		boucle();
+		lireSomme();
 	
 	}
 	
@@ -18,16 +18,26 @@ public class IhmTextCompte {
 	/**
 	 * boucle de lecture du shell
 	 */
-	protected static void boucle() {
+	protected static void lireSomme() {
 		String scan = "";
+		String operation = "";
 		Scanner sc = new Scanner(System.in);
 		Journal journ = Journal.getInstance();
 		while(!scan.equals("exit")) {
+			System.out.println("debit, credit ou exit");
 			scan = sc.next();
+			if(scan.equals("debit")||scan.equals("credit")) {
+				operation=scan;
+				while(!scan.equals("cancel")) {
+					System.out.println("somme ou cancel");
+					scan = sc.next();
+				}
+			}
 			System.out.println(scan);
 			
 		}
 		sc.close();
 	}
+		
 
 }
