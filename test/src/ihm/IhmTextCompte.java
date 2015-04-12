@@ -23,7 +23,7 @@ public class IhmTextCompte {
 		Scanner sc = new Scanner(System.in);
 		Journal journ = Journal.getInstance();
 		while(!scan.equals("exit")) {
-			System.out.println("debit, credit ou exit");
+			System.out.println("débit, crédit ou exit");
 			scan = sc.next();
 			if(scan.equals("debit")||scan.equals("credit")) {
 				String operation=scan;
